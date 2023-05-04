@@ -1,0 +1,9 @@
+@import 'bootstrap/scss/bootstrap';
+
+// @import './partial/variables';
+
+body {
+    min-height: 100vh;
+    scroll-behavior: smooth !important;
+    color: white;
+}
