@@ -1,9 +1,12 @@
 <script>
+import { store }    from '../data/store'
 export default {
     name: 'Header',
-    // props: {
-    //     title: String,
-    // }
+    data(){
+        return{
+            store
+        }
+    }
 }
 </script>
 
@@ -14,8 +17,8 @@ export default {
         <div class="container-fluid h-100">
             <div class="container-right h-100">
                 <div class="form d-flex justify-content-end align-items-center h-100">
-                    <input class="form-control" type="text" placeholder="Cerca un Film" style="width: 15%;">
-                    <button class="btn btn-danger mx-2" @click="$emit('filterCardsType')">Search</button>
+                    <input v-model="store.searchInput" class="form-control" type="text" placeholder="Cerca un Film" style="width: 15%;" @keyup.enter="$emit('searchMovie')">
+                    <button class="btn btn-danger mx-2" @click="$emit('searchMovie')">Search</button>
                 </div>
             </div>
         </div>

@@ -21,11 +21,15 @@ export default {
     },
     methods: {
       getApi(){
-        store.isLoading = true;
+        // store.isLoading = true;
         axios.get(store.apiUrl, {
           params: {
+            query: store.searchInput
           }
         }).then(result => {
+          store.movieArray  = result.data.results;
+          store.displayCard = true;
+            console.log('movie cercato -->', store.movieArray);
         })
       },
     },
@@ -36,7 +40,8 @@ export default {
 </script>
 
 <template>
-  <Header />
+  <Header @searchMovie="getApi" />
+
   <!-- <Loader v-if="store.isLoading" /> -->
   <!-- <div class="container-after-loading" v-else> -->
     <Main />
