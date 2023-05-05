@@ -18,6 +18,7 @@ export default {
 
 <template>
     <main class="d-flex px-4">
+        
         <div class="row row-cols-5">
             <Card v-for="movie in store.movieArray" :key="movie.id"
             :moviePoster="movie.poster_path"

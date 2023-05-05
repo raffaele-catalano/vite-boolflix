@@ -18,7 +18,7 @@ export default {
             <div class="container-right h-100">
                 <div class="form d-flex justify-content-end align-items-center h-100">
                     <input v-model="store.searchInput" class="form-control" type="text" placeholder="Cerca un Film" style="width: 15%;" @keyup.enter="$emit('searchMovie')">
-                    <button class="btn btn-danger mx-2" @click="$emit('searchMovie')">Search</button>
+                    <button class="btn mx-2" @click="$emit('searchMovie')">Search</button>
                 </div>
             </div>
         </div>
@@ -40,13 +40,7 @@ export default {
         }
     }
 
-    nav {
-        ul {
-            li {
-                a{
-                    color: white;
-                }
-            }
-        }
+    button {
+        background-color: $secondary;
     }
 </style>

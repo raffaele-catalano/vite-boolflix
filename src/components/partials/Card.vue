@@ -30,7 +30,7 @@ export default {
                 <h6>{{ movieOriginalTitle }}</h6>
             </div>
             <div class="card_other_info d-flex flex-column align-items-center">
-                <p>{{ language }}</p>
+                <img :src="`flags/language-${language}.svg`" alt="original_language">
                 <p>{{ averageScore }}</p>
             </div>
         </div>
@@ -41,10 +41,15 @@ export default {
 @use "../src/scss/partials/variables" as *;
 
     .rc-card {
-        color: red;
-        border: 1px solid red;
+        color: $secondary;
+        border: 1px solid $secondary;
         border-radius: 10px;
         min-height: 400px;
         max-width: 250px;
+        .card_other_info {
+            img {
+                width: 30px;
+            }
+        }
     }
 </style>
