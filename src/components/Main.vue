@@ -30,6 +30,7 @@ export default {
             :Poster="movie.poster_path"
             :Title="movie.title"
             :OriginalTitle="movie.original_title" 
+            :Overview="movie.overview"
             :language="movie.original_language"
             :averageScore="Math.round(movie.vote_average / 2)"/>
         </div>
@@ -39,7 +40,8 @@ export default {
             <Card_TvSeries v-for="serie in store.seriesArray" :key="serie.id"
             :Poster="serie.poster_path"
             :Title="serie.name"
-            :OriginalTitle="serie.original_name" 
+            :OriginalTitle="serie.original_name"
+            :Overview="serie.overview"
             :language="serie.original_language"
             :averageScore="Math.round(serie.vote_average / 2)"/>
         </div>
