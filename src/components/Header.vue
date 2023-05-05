@@ -17,8 +17,8 @@ export default {
         <div class="container-fluid h-100">
             <div class="container-right h-100">
                 <div class="form d-flex justify-content-end align-items-center h-100">
-                    <input v-model="store.searchInput" class="form-control" type="text" placeholder="Cerca un Film" style="width: 15%;" @keyup.enter="$emit('searchMovie')">
-                    <button class="btn mx-2" @click="$emit('searchMovie')">Search</button>
+                    <input v-model="store.searchInput" class="form-control" type="text" placeholder="Cerca un Film" style="width: 15%;" @keyup.enter="$emit('searchMovie'), $emit('searchSerie')" >
+                    <button class="btn mx-2" @click="$emit('searchMovie'), $emit('searchSerie')">Search</button>
                 </div>
             </div>
         </div>

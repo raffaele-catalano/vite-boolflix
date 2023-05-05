@@ -20,9 +20,9 @@ export default {
       }
     },
     methods: {
-      getApi(){
+      getApiMovies(){
         // store.isLoading = true;
-        axios.get(store.apiUrl, {
+        axios.get(store.apiUrlMovie, {
           params: {
             query: store.searchInput
           }
@@ -32,15 +32,28 @@ export default {
             console.log('movie cercato -->', store.movieArray);
         })
       },
+      getApiSeries(){
+        // store.isLoading = true;
+        axios.get(store.apiUrlSeries, {
+          params: {
+            query: store.searchInput
+          }
+        }).then(result => {
+          store.seriesArray  = result.data.results;
+          store.displayCard = true;
+            console.log('series cercata -->', store.seriesArray);
+        })
+      },
     },
     mounted (){
-      this.getApi();
+      this.getApiMovies();
+      this.getApiSeries();
     }
 }
 </script>
 
 <template>
-  <Header @searchMovie="getApi" />
+  <Header @searchMovie="getApiMovies" @searchSerie="getApiSeries" />
 
   <!-- <Loader v-if="store.isLoading" /> -->
   <!-- <div class="container-after-loading" v-else> -->
