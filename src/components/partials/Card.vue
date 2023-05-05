@@ -21,7 +21,6 @@ export default {
     <div class="col">
         <div class="rc-card d-flex flex-column mb-3">
             <div class="card_image d-flex justify-content-center">
-                <!-- <img src="https://image.tmdb.org/t/p/w200/ApPuHAhH4wYGb4YCLChJYQvHUEF.jpg" alt="movie_poster"> -->
 
                 <img :src="`https://image.tmdb.org/t/p/w200${moviePoster}`" alt="movie_poster">
             </div>
