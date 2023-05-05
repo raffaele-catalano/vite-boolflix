@@ -13,8 +13,11 @@ export default {
             store
         }
     },
-    methods: {
-    }
+    // methods: {
+    //     voteAverageMathFloor(vote){
+    //         return Math.floor(vote)
+    //     }
+    // }
 }
 </script>
 
@@ -28,7 +31,7 @@ export default {
             :Title="movie.title"
             :OriginalTitle="movie.original_title" 
             :language="movie.original_language"
-            :averageScore="movie.vote_average"/>
+            :averageScore="Math.round(movie.vote_average / 2)"/>
         </div>
 
         <h2>TV Series</h2>
@@ -38,7 +41,7 @@ export default {
             :Title="serie.name"
             :OriginalTitle="serie.original_name" 
             :language="serie.original_language"
-            :averageScore="serie.vote_average"/>
+            :averageScore="Math.round(serie.vote_average / 2)"/>
         </div>
 
     </main>

@@ -28,9 +28,12 @@ export default {
                 <h5>{{ Title }}</h5>
                 <h6>{{ OriginalTitle }}</h6>
             </div>
-            <div class="card_other_info d-flex flex-column align-items-center">
+            <div class="card_other_info d-flex flex-column align-items-center my-1">
                 <img :src="`flags/language-${language}.svg`" alt="original_language">
-                <p>{{ averageScore }}</p>
+            </div>
+            <div class="average_vote_container d-flex justify-content-center my-2">
+                <i v-for="star in averageScore" :key="star" class="fa-solid fa-star" style="color: #ffdf00;"></i>
+                <i v-for="star in (5 - averageScore)" :key="star" class="fa-regular fa-star" style="color: #ffdf00;"></i>
             </div>
         </div>
     </div>
