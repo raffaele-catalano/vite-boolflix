@@ -22,10 +22,10 @@ export default {
 </script>
 
 <template>
-    <main class="px-4">
+    <main class="p-5">
         
         <h2>Movies</h2>
-        <div class="row row-cols-6 mb-3">
+        <div class="row row-cols-5 mb-3">
             <Card_Movie v-for="movie in store.movieArray" :key="movie.id"
             :Poster="movie.poster_path"
             :Title="movie.title"
@@ -35,7 +35,7 @@ export default {
         </div>
 
         <h2>TV Series</h2>
-        <div class="row row-cols-6 mb-3">
+        <div class="row row-cols-5 mb-3">
             <Card_TvSeries v-for="serie in store.seriesArray" :key="serie.id"
             :Poster="serie.poster_path"
             :Title="serie.name"

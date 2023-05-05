@@ -42,5 +42,6 @@ export default {
 
     button {
         background-color: $secondary;
+
     }
 </style>
