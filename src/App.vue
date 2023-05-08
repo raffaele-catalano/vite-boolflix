@@ -2,14 +2,15 @@
 import axios      from 'axios';
 import { store }  from './data/store';
 import Header     from './components/Header.vue';
+import Jumbotron  from './components/Jumbotron.vue';
 import Main       from './components/Main.vue';
-// import Footer     from './components/Footer.vue';
 // import Loader     from './components/partials/Loader.vue';
 
 export default {
     name: 'App',
     components: {
       Header,
+      Jumbotron,
       Main,
       // Footer,
       // Loader
@@ -62,10 +63,10 @@ export default {
 
 <template>
   <Header @searchMovie="getApiMovies" @searchSerie="getApiSeries" />
-
+  <Jumbotron />
   <!-- <Loader v-if="store.isLoading" /> -->
   <!-- <div class="container-after-loading" v-else> -->
-    <Main />
+  <Main />
     <!-- <Footer /> -->
   <!-- </div> -->
 </template>

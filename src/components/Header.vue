@@ -1,5 +1,6 @@
 <script>
 import { store }    from '../data/store'
+
 export default {
     name: 'Header',
     data(){

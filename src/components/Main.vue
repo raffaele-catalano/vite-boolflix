@@ -1,7 +1,7 @@
 <script>
-import { store }        from '../data/store';
-import Card             from './partials/Card.vue';
-import { Swiper, SwiperSlide } from 'swiper/vue';
+import { store }                from '../data/store';
+import Card                     from './partials/Card.vue';
+import { Swiper, SwiperSlide }  from 'swiper/vue';
 import 'swiper/css';
 
 import 'swiper/css/pagination';
@@ -39,7 +39,7 @@ export default {
     <!-- ////////////////////// -->
     
     <!-- SWIPER SEARCHED MOVIES -->
-    <h2 v-if="store.movieArray.length > 0" class="mt-5">Movies Founded:</h2>
+    <h2 v-if="store.movieArray.length > 0" class="mt-5 ms-5">Movies Founded:</h2>
     <swiper
     v-if="store.movieArray.length > 0"
     :slidesPerView="5"
@@ -68,7 +68,7 @@ export default {
     <!-- ////////////////////// -->
     
     <!-- SWIPER SEARCHED SERIES -->
-    <h2 v-if="store.seriesArray.length > 0" class="mt-5">Series Founded:</h2>
+    <h2 v-if="store.seriesArray.length > 0" class="mt-5 ms-5">Series Founded:</h2>
     <swiper
     v-if="store.seriesArray.length > 0"
     :slidesPerView="5"
@@ -92,35 +92,35 @@ export default {
         :language="serie.original_language"
         :averageScore="Math.round(serie.vote_average / 2)"/>
     </swiper-slide>
-</swiper>
+    </swiper>
 <!-- ////////////////////// -->
 <!-- ////////////////////// -->
 
 <!-- SWIPER POPULAR MOVIES -->
-<h2 class="mt-5">Popular Movies</h2>
-<swiper
-:slidesPerView="5"
-:spaceBetween="30"
-:mousewheel="true"
-:loop="true"
-:pagination="{
-    clickable: true,
-}"
-:navigation="true"
-:modules="modules"
-class="mySwiper
-"
->
-<swiper-slide v-for="movie in store.moviePopularArray" :key="movie.id">
-    <Card
-        :Poster="movie.poster_path"
-        :Title="movie.title"
-        :OriginalTitle="movie.original_title" 
-        :Overview="movie.overview"
-        :language="movie.original_language"
-        :averageScore="Math.round(movie.vote_average / 2)"/>
-</swiper-slide>
-</swiper>
+    <h2 class="mt-5 ms-5">Popular Movies</h2>
+    <swiper
+    :slidesPerView="5"
+    :spaceBetween="30"
+    :mousewheel="true"
+    :loop="true"
+    :pagination="{
+        clickable: true,
+    }"
+    :navigation="true"
+    :modules="modules"
+    class="mySwiper
+    "
+    >
+    <swiper-slide v-for="movie in store.moviePopularArray" :key="movie.id">
+        <Card
+            :Poster="movie.poster_path"
+            :Title="movie.title"
+            :OriginalTitle="movie.original_title" 
+            :Overview="movie.overview"
+            :language="movie.original_language"
+            :averageScore="Math.round(movie.vote_average / 2)"/>
+    </swiper-slide>
+    </swiper>
 
 </main>
 </template>
