@@ -47,8 +47,8 @@ export default {
                 </div>
 
                 <div class="card_average_vote d-flex justify-content-center my-2">
-                    <i v-for="star in averageScore" :key="star" class="fa-solid fa-star" style="color: #ffdf00;"></i>
-                    <i v-for="star in (5 - averageScore)" :key="star" class="fa-regular fa-star" style="color: #ffdf00;"></i>
+                    <i v-for="star in averageScore" :key="star" class="fa-solid fa-star" style="color: #DB202C;"></i>
+                    <i v-for="star in (5 - averageScore)" :key="star" class="fa-solid fa-star"></i>
                 </div>
 
             </div>
@@ -62,6 +62,15 @@ export default {
     .rc-card{
         color: white;
         border-radius: 10px;
+        transition: all .6s;
+
+        &:hover {
+            .card_image {
+                img {
+                    transform: scale(1.3);
+                }
+            }
+        }
         .card_image{
         width: 100%;
         aspect-ratio: 2/3;
@@ -83,7 +92,7 @@ export default {
                 }
             }
             .card_overview {
-                max-height: 300px;
+                max-height: 200px;
                 overflow-y: auto;
                 p {
                     text-justify: inter-word;

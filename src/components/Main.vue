@@ -111,7 +111,7 @@ export default {
     class="mySwiper
     "
     >
-        <swiper-slide v-for="movie in store.moviePopularArray" :key="movie.id">
+        <swiper-slide v-for="movie in store.moviePopularArray" :key="movie.id" id="popular">
         <Card
             :Poster="movie.poster_path"
             :Title="movie.title"

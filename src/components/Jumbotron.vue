@@ -65,7 +65,7 @@ export default {
                 <div class="movie-average-vote-container">
                     <span class="me-1">Rating:</span>
 
-                    <i v-for="star in Math.round(movie.vote_average / 2)" :key="star" class="fa-solid fa-star" style="color: #ffdf00;"></i>
+                    <i v-for="star in Math.round(movie.vote_average / 2)" :key="star" class="fa-solid fa-star" style="color: #DB202C;"></i>
 
                     <i v-for="star in (5 - Math.round(movie.vote_average / 2))" :key="star" class="fa-solid fa-star"></i>
                 </div>
