@@ -1,7 +1,11 @@
 <script>
 import { store } from "../../data/store";
+import Modal from './Modal.vue'
 export default {
     name: 'Card_Movie',
+    components: {
+        Modal,
+    },
     props: {
         Poster         : String,
         Title          : String,
@@ -24,7 +28,7 @@ export default {
 
             <div class="card_image overflow-hidden">
                 <img v-if="Poster === null" src="not_found.png" alt="image_not_found">
-                <img v-else :src="`https://image.tmdb.org/t/p/w342${Poster}`" alt="movie_poster">
+                <img v-else :src="`https://image.tmdb.org/t/p/original${Poster}`" alt="movie_poster">
             </div>
 
             <div class="textual_info_container position-absolute h-100 w-100 p-1">

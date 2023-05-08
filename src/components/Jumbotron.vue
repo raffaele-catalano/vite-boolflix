@@ -61,16 +61,19 @@ export default {
                 <div class="movie-language-container mb-2">
                     <img :src="`flags/language-${movie.original_language}.svg`" alt="original_language">
                 </div>
+                
+                <div class="movie-average-vote-container">
+                    <span class="me-1">Rating:</span>
+
+                    <i v-for="star in Math.round(movie.vote_average / 2)" :key="star" class="fa-solid fa-star" style="color: #ffdf00;"></i>
+
+                    <i v-for="star in (5 - Math.round(movie.vote_average / 2))" :key="star" class="fa-solid fa-star"></i>
+                </div>
 
                 <div class="movie-overwiev-container">
                     <p>{{ movie.overview }}</p>
                 </div>
-
-                <div class="movie-average-vote-container">
-                    <i v-for="star in Math.round(movie.vote_average / 2)" :key="star" class="fa-solid fa-star" style="color: #ffdf00;"></i>
-
-                    <i v-for="star in (5 - Math.round(movie.vote_average / 2))" :key="star" class="fa-regular fa-star" style="color: #ffdf00;"></i>
-                </div>
+                
 
             </div>
 
@@ -84,7 +87,7 @@ export default {
 
 .mySwiper {
     position: relative;
-    height: 500px;
+    height: 550px;
 }
 .jumbotron {
     width: 100%;
@@ -119,11 +122,11 @@ export default {
             justify-content: center;
             flex-direction: column;
             width: 30%;
-            height: 55%;
+            height: 100%;
             position: absolute;
-            top: 25%;
+            top: 0;
             left: 50px;
-            margin-top: 3px;
+            // margin-top: 3px;
             // debug
             // border: 1px solid gold;
 
@@ -133,7 +136,7 @@ export default {
                 }
             }
             .movie-overwiev-container{
-                max-height: 150px;
+                height: 100%;
                 overflow-y: auto;
                 p {
                     text-justify: inter-word;
