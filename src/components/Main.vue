@@ -14,17 +14,23 @@ export default {
             store,
         }
     },
-    // methods: {
-    //     voteAverageMathFloor(vote){
-    //         return Math.floor(vote)
-    //     }
-    // }
 }
 </script>
 
 <template>
     <main class="p-5">
         
+        <h2>Popular Movies</h2>
+        <div class="row row-cols-5 mb-3">
+            <Card_Movie v-for="movie in store.moviePopularArray" :key="movie.id"
+            :Poster="movie.poster_path"
+            :Title="movie.title"
+            :OriginalTitle="movie.original_title" 
+            :Overview="movie.overview"
+            :language="movie.original_language"
+            :averageScore="Math.round(movie.vote_average / 2)"/>
+        </div>
+
         <h2 v-if="store.movieArray.length > 0">Movies</h2>
         <div v-if="store.movieArray.length > 0" class="row row-cols-5 mb-3">
             <Card_Movie v-for="movie in store.movieArray" :key="movie.id"
