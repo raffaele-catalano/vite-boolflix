@@ -26,12 +26,11 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-// @use "./scss/main.scss" as *;
-@use "../src/scss/partials/variables" as *;
+@use "../scss/partials/variables" as *;
 
     header {
         height: 80px;
-        background-color: $primary;
+        background-color: $dark-principal;
         padding: 5px;
         border-bottom: 1px solid rgb(35, 35, 35);
 
@@ -41,7 +40,7 @@ export default {
     }
 
     button {
-        background-color: $secondary;
+        background-color: $red-logo;
 
     }
 </style>

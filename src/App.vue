@@ -72,8 +72,16 @@ export default {
 
 <style lang="scss">
 @use "./scss/main.scss" as *;
+@use "./scss/partials/variables" as *;
+
+body {
+    min-height: 100vh;
+    scroll-behavior: smooth !important;
+    color: white;
+    background-color: $dark-principal;
+}
 
   .container-after-loading{
-    background-color: $primary;
+    background-color: $dark-principal;
   }
 </style>

@@ -1,16 +1,12 @@
-@import 'bootstrap/scss/bootstrap';
+// @import './partials/variables';
+// @import './partials/swiper';
 
-@import './partials/variables';
+@use './partials/swiper' as *;
+
+@import 'bootstrap/scss/bootstrap';
 
 @import '@fortawesome/fontawesome-free/scss/brands.scss';
 @import '@fortawesome/fontawesome-free/scss/fontawesome.scss';
 @import '@fortawesome/fontawesome-free/scss/regular.scss';
 @import '@fortawesome/fontawesome-free/scss/solid.scss';
 @import '@fortawesome/fontawesome-free/scss/v4-shims.scss';
-
-body {
-    min-height: 100vh;
-    scroll-behavior: smooth !important;
-    color: white;
-    background-color: $primary;
-}

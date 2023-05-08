@@ -19,7 +19,7 @@ export default {
 </script>
 
 <template>
-<div class="col">
+<div class="col mb-4">
         <div class="rc-card d-flex flex-column justify-content-between position-relative overflow-hidden py-2">
 
             <div class="card_image overflow-hidden">
@@ -53,7 +53,6 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-@use "../src/scss/partials/variables" as *;
 
 .col{
     .rc-card{
@@ -62,11 +61,12 @@ export default {
         .card_image{
         width: 100%;
         aspect-ratio: 2/3;
-        object-fit: contain;
+        object-fit: cover;
             img{
             width: 100%;
             height: 100%;
             transition: all .5s;
+            border-radius: 10px;
             }
         }
         .textual_info_container{
