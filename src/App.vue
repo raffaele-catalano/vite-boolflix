@@ -4,7 +4,7 @@ import { store }  from './data/store';
 import Header     from './components/Header.vue';
 import Main       from './components/Main.vue';
 // import Footer     from './components/Footer.vue';
-// import Loader     from './components/partial/Loader.vue';
+// import Loader     from './components/partials/Loader.vue';
 
 export default {
     name: 'App',
@@ -15,7 +15,7 @@ export default {
       // Loader
     },
     data(){
-      return{
+      return {
         store
       }
     },
@@ -44,9 +44,17 @@ export default {
             console.log('series cercata -->', store.seriesArray);
         })
       },
+      getApiMoviesPopular (){
+        axios.get(store.apiUrlMoviePopular).then(result => {
+          store.moviePopularArray = [];
+          store.moviePopularArray = result.data.results;
+            console.log('Movie Popular -->', store.moviePopularArray);
+        })
+        }
     },
     mounted (){
       this.getApiMovies();
+      this.getApiMoviesPopular();
       this.getApiSeries();
     }
 }
@@ -64,7 +72,6 @@ export default {
 
 <style lang="scss">
 @use "./scss/main.scss" as *;
-// @use "../src/scss/partials/variables" as *;
 
   .container-after-loading{
     background-color: $primary;
