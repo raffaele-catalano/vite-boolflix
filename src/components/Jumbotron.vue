@@ -30,8 +30,8 @@ export default {
     :slidesPerView="1"
     :spaceBetween="30"
     :autoplay="{
-        delay: 2500,
-        disableOnInteraction: false,
+        delay: 4000,
+        disableOnInteraction: true,
     }"
     :loop="true"
     :pagination="{
@@ -44,8 +44,11 @@ export default {
     >
     <swiper-slide v-for="movie in store.movieUpcomingArray" :key="movie.id">
         <div class="jumbotron">
+
+            <div class="fake-container"></div>
+
             <div class="backdrop-container">
-                <img :src="`https://image.tmdb.org/t/p/w780${movie.backdrop_path}`" :alt="movie.title">
+                <img :src="`https://image.tmdb.org/t/p/original${movie.backdrop_path}`" :alt="movie.title">
             </div>
 
             <div class="movie-info-container">
@@ -82,35 +85,47 @@ export default {
 .mySwiper {
     position: relative;
     height: 500px;
-    // z-index: 0;
-    // .backdrop-container  {
-    //     img{
-    //         width: 100%;
-    //         height: 500px;
-    //         object-fit: cover;
-    //     }
-    // }
 }
 .jumbotron {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    z-index: 1000;
-        .backdrop-container{
-            width: 100%;
-            height: 100%;
-            img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
+    position: relative;
+    // z-index: 1000;
+    .fake-container {
+        height: 100%;
+        width: 50%;
+        position: absolute;
+        left: 0;
+        background: rgb(0,0,0);
+        background: linear-gradient(90deg, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+    }
+    .backdrop-container{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: flex-end;
+        z-index: 40;
+        img {
+            width: 80%;
+            object-fit: cover;
+            background-image: linear-gradient(to left, rgba(0,0,0,1), rgba(0,0,0,0));
+            //debug
             }
         }
         .movie-info-container{
+            display: flex;
+            // align-items: center;
+            justify-content: center;
+            flex-direction: column;
             width: 30%;
-            height: 40%;
+            height: 55%;
             position: absolute;
             top: 25%;
-            left: 45px;
+            left: 50px;
+            margin-top: 3px;
+            // debug
+            // border: 1px solid gold;
 
             .movie-language-container {
                 img {
