@@ -10,7 +10,7 @@ import 'swiper/css/navigation';
 // import '../assets/css/style.css';
 
 // import required modules
-import { Pagination, Navigation } from 'swiper';
+import { Pagination, Navigation, Mousewheel } from 'swiper';
 
 export default {
     name: 'Main',
@@ -26,7 +26,7 @@ export default {
     },
     setup() {
         return {
-            modules: [Pagination, Navigation],
+            modules: [Pagination, Navigation, Mousewheel],
         };
     },
 }
@@ -44,6 +44,7 @@ export default {
     v-if="store.movieArray.length > 0"
     :slidesPerView="5"
     :spaceBetween="30"
+    :mousewheel="true"
     :loop="true"
     :pagination="{
         clickable: true,
@@ -72,6 +73,7 @@ export default {
     v-if="store.seriesArray.length > 0"
     :slidesPerView="5"
     :spaceBetween="30"
+    :mousewheel="true"
     :loop="true"
     :pagination="{
         clickable: true,
@@ -99,6 +101,7 @@ export default {
 <swiper
 :slidesPerView="5"
 :spaceBetween="30"
+:mousewheel="true"
 :loop="true"
 :pagination="{
     clickable: true,
