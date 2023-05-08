@@ -51,11 +51,19 @@ export default {
           store.moviePopularArray = result.data.results;
             console.log('Movie Popular -->', store.moviePopularArray);
         })
+        },
+      getApiMoviesUpcoming (){
+        axios.get(store.apiUrlMovieUpcoming).then(result => {
+          store.movieUpcomingArray = [];
+          store.movieUpcomingArray = result.data.results;
+            console.log('Movie Upcoming -->', store.movieUpcomingArray);
+        })
         }
     },
     mounted (){
       this.getApiMovies();
       this.getApiMoviesPopular();
+      this.getApiMoviesUpcoming();
       this.getApiSeries();
     }
 }

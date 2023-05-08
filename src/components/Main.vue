@@ -54,7 +54,7 @@ export default {
     class="mySwiper
     "
     >
-    <swiper-slide v-for="movie in store.movieArray" :key="movie.id">
+        <swiper-slide v-for="movie in store.movieArray" :key="movie.id">
         <Card
             :Poster="movie.poster_path"
             :Title="movie.title"
@@ -83,7 +83,7 @@ export default {
     class="mySwiper
     "
     >
-    <swiper-slide v-for="serie in store.seriesArray" :key="serie.id">
+        <swiper-slide v-for="serie in store.seriesArray" :key="serie.id">
         <Card
         :Poster="serie.poster_path"
         :Title="serie.name"
@@ -91,7 +91,7 @@ export default {
         :Overview="serie.overview"
         :language="serie.original_language"
         :averageScore="Math.round(serie.vote_average / 2)"/>
-    </swiper-slide>
+        </swiper-slide>
     </swiper>
 <!-- ////////////////////// -->
 <!-- ////////////////////// -->
@@ -111,7 +111,7 @@ export default {
     class="mySwiper
     "
     >
-    <swiper-slide v-for="movie in store.moviePopularArray" :key="movie.id">
+        <swiper-slide v-for="movie in store.moviePopularArray" :key="movie.id">
         <Card
             :Poster="movie.poster_path"
             :Title="movie.title"
@@ -119,7 +119,7 @@ export default {
             :Overview="movie.overview"
             :language="movie.original_language"
             :averageScore="Math.round(movie.vote_average / 2)"/>
-    </swiper-slide>
+        </swiper-slide>
     </swiper>
 
 </main>
